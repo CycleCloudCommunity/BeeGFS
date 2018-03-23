@@ -91,6 +91,9 @@ Order = 25
         Label = BeeGFS Cluster
         Description = Name of the BeeGFS cluster to connect to. The BeeGFS cluster should be orchestrated by the same CycleCloud Server
         Required = True
+        Config.Plugin = pico.form.QueryDropdown
+        Config.Query = select ClusterName as Name from Cloud.Node where Cluster().IsTemplate =!= True && ClusterInitSpecs["beegfs:manager"] isnt undefined
+        Config.SetDefault = false
 
         [[[parameter BeeGFSMountPt]]]
         Label = BeeGFS MountPt
@@ -178,7 +181,7 @@ Order = 40
 
 [cluster PBS-BeeGFS]
 FormLayout = selectionpanel
-IconUrl = http://www.gromacs.org/@api/deki/site/logo.png
+IconUrl = https://www.beegfs.io/content/wp-content/uploads/pics/beegfs-logo/BeeGFS_Logo_137x87.png
 
 # Enable/disable autoscaling
 # The scheduler load will determine the number of execute machines that are started, machines will terminate themselves if they are idle
