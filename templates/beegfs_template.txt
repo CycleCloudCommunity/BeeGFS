@@ -261,7 +261,6 @@ IconUrl = https://www.beegfs.io/content/wp-content/uploads/pics/beegfs-logo/BeeG
 
         [[[configuration cyclecloud.mounts.beegfs]]]
         mountpoint = $BeeGFSRoot
-        devices = /dev/sdc, /dev/sdd, /dev/sde
         fs_type = ext4
         raid_level = 5
 
